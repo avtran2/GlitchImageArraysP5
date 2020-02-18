@@ -10,9 +10,7 @@ var img; // Declare variable 'img'.
 var imageList=[];
 var stringList;
 
-var startMillis;
-
-var posX, posY;
+var bRegular=true;
 
 //State machines that determines emotions
 var state; //will change
@@ -41,7 +39,7 @@ function setup(){
 	startMillis=millis();
 }
 
-function main(){
+function draw(){
 	if(state=="Ellipse")
 		drawOne();
 	else if(state=="mouseFollow")
@@ -148,14 +146,17 @@ function chooseNewItem() {
   print(displayString);
 }
 
+function mousePressed() {
+  bRegular=!bRegular;
+
+  chooseNewItem();
+}
+
 function setState(){
 	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "Triangle", "normalPic"];
 
-	if(millis()>startMillis+1000)
-	{
-		state=random(stateList);
-		startMillis=millis();
-	}
+    bRegular=!bRegular;
+    state=random(stateList);
 
 	return state;
  }
