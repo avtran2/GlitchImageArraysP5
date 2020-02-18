@@ -44,13 +44,13 @@ function setup(){
 function draw(){
 	if(state=="Ellipse")
 		drawOne();
-	else if(state=="mouseFollow")
+	else if(state=="mouseFollowYellow")
 		drawTwo();
 	else if(state=="displayText")
 		drawThree();
-	else if(state=="shrinkPic")
+	else if(state=="mouseFollowGreen")
 		drawFour();
-	else if(state=="Triangle")
+	else if(state=="mouseFollowRed")
 		drawFive();
 	else if(state="normalPic")
 		drawZero();
@@ -61,7 +61,7 @@ function drawZero(){//Normal display
     image(img, width/2, height/2);
 }
 
-function drawOne(){//Display an ellipse
+function drawOne(){//Display a red ellipse behind the picture
 	background(0);
 
     //Displays the image at center point
@@ -76,7 +76,7 @@ function drawOne(){//Display an ellipse
     image(img, width/2, height/2);
 }
 
-function drawTwo(){//Display an ellipse that follows the mouse
+function drawTwo(){//Display a yellow ellipse that follows the mouse
 	background(0);//Black
 
     //Displays the image at center point
@@ -106,22 +106,40 @@ function drawThree(){//Display text
     text(displayString, 100, 100);
 }
 
-function drawFour(){//Shrink picture
+function drawFour(){//Display a green ellipse that follows the mouse
 	background(0);//Black
-    
-    //draw the image
-    image(img, width/2*3, height/2*3);
-}
 
-function drawFive(){//Display triangle
-	background(255, 255 , 0);
+    //Displays the image at center point
+    //draw the image
+    image(img, width/2, height/2);
+
+    posX=mouseX;
+    posY=mouseY;
+
+    posX+=(mouseX-posX)/10;
+    posY+=(mouseY-posY)/10;
 
     fill(0, 128, 0);//Green
 
-    triangle((width/8), (width/8), (width/8), (width/8), (width/8), (width/8));
-    
+    ellipse(posX, posY, 100, 100);
+}
+
+function drawFive(){//Display a red ellipse that follows the mouse
+	background(0);//Black
+
+    //Displays the image at center point
     //draw the image
     image(img, width/2, height/2);
+
+    posX=mouseX;
+    posY=mouseY;
+
+    posX+=(mouseX-posX)/10;
+    posY+=(mouseY-posY)/10;
+
+    fill(255, 0, 0);//Red
+
+    ellipse(posX, posY, 100, 100);
 }
 
 //chooses a new items from the array, select a random
@@ -145,7 +163,7 @@ function mousePressed() {
 }
 
 function setState(){
-	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "Triangle", "normalPic"];
+	stateList=["Ellipse", "mouseFollowYellow", "displayText", "mouseFollowGreen", "mouseFollowRed", "normalPic"];
 
     state=random(stateList);    
 
