@@ -12,6 +12,9 @@ var stringList;
 
 var bRegular=true;
 
+var posX;
+var posY;
+
 //State machines that determines emotions
 var state; //will change
 var stateList;
@@ -86,6 +89,9 @@ function drawTwo(){//Display an ellipse that follows the mouse
     //Displays the image at center point
     //image(img, width/2, height/2, random(mouseX), random(mouseY));
     chooseNewImage();
+
+    posX=mouseX;
+    posY=mouseY;
 
     posX+=(mouseX-posX)/10;
     posY+=(mouseY-posY)/10;
