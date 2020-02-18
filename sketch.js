@@ -8,7 +8,7 @@
 
 var img; // Declare variable 'img'.
 var imageList=[];
-var stringList=;
+var stringList;
 
 var startMillis;
 
@@ -149,9 +149,9 @@ function chooseNewItem() {
 }
 
 function setState(){
-	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "5", "normalPic"];
+	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "Triangle", "normalPic"];
 
-	if(millis()>startMillis+450)
+	if(millis()>startMillis+1000)
 	{
 		state=random(stateList);
 		startMillis=millis();
