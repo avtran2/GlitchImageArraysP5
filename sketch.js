@@ -30,7 +30,7 @@ function preload(){
   imageList[3]=loadImage('image4.jpg');
   imageList[4]=loadImage('image5.jpg');
   imageList[5]=loadImage('image6.jpg');  
-  stringList=["Help Me Please!", "Flee, Flee For Your Lives", "We Are Doomed!", "Tonight, We Are Doomed!", "Save Yourselves!", "Please Help!"];
+  stringList=["Help Me Please!", "Flee, Flee For Your Lives!", "We Are Doomed!", "Tonight, We Are Doomed!", "Save Yourselves!", "Please Help!"];
 }
 
 function setup(){
