@@ -71,7 +71,7 @@ function drawZero(){//Normal display
 }
 
 function drawOne(){//Display an ellipse
-	background(135, 206, 250);
+	background(0);
 
     //Displays the image at center point
 
@@ -94,7 +94,6 @@ function drawTwo(){//Display an ellipse that follows the mouse
     //image(img, width/2, height/2, random(mouseX), random(mouseY));
     chooseNewImage();
 
-    fill(255, 255, 0);
     posX+=(mouseX-posX)/10;
     posY+=(mouseY-posY)/10;
 
