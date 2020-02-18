@@ -155,13 +155,12 @@ function chooseNewItem() {
 function mousePressed() {
   bRegular=!bRegular;
 
-  chooseNewItem();
+  setState()
 }
 
 function setState(){
 	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "Triangle", "normalPic"];
 
-    bRegular=!bRegular;
     state=random(stateList);
 
 	return state;
