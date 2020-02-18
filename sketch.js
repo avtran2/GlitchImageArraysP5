@@ -26,7 +26,7 @@ function preload(){
   imageList[2]=loadImage('image3.jpg');
   imageList[3]=loadImage('image4.jpg');
   imageList[4]=loadImage('image5.jpg');
-  stringList=["Help Me Please!", "Flee, Flee For Your Lives!", "We Are Doomed!", "Tonight, We Are Doomed!", "Save Yourselves!", "Please Help!"];
+  stringList=["Hi there!"];
 }
 
 function setup(){
@@ -57,11 +57,7 @@ function draw(){
 }
 
 function drawZero(){//Normal display
-	background(0);
-
-    //Displays the image at center point
-    
-    //draw the image
+	background(0);//Black
     image(img, width/2, height/2);
 }
 
@@ -81,10 +77,11 @@ function drawOne(){//Display an ellipse
 }
 
 function drawTwo(){//Display an ellipse that follows the mouse
-	background(0);
+	background(0);//Black
 
     //Displays the image at center point
-    //image(img, width/2, height/2, random(mouseX), random(mouseY));
+    //draw the image
+    image(img, width/2, height/2);
 
     posX=mouseX;
     posY=mouseY;
@@ -96,34 +93,32 @@ function drawTwo(){//Display an ellipse that follows the mouse
 
     ellipse(posX, posY, 100, 100);
     
-    //draw the image
-    image(img, width/2, height/2);
 }
 
 function drawThree(){//Display text
-	background(255, 0, 0);
+	background(255, 0, 0);    
+
+    //draw the image
+    image(img, width/2, height/2);
 
     chooseNewItem();
     fill(255, 255, 0);
     text(displayString, 100, 100);
-    
-    //draw the image
-    image(img, width/2, height/2);
 }
 
-function drawFour(){
-	background(0);
+function drawFour(){//Shrink picture
+	background(0);//Black
     
     //draw the image
     image(img, width/2*3, height/2*3);
 }
 
-function drawFive(){
+function drawFive(){//Display triangle
 	background(255, 255 , 0);
 
     fill(0, 128, 0);//Green
 
-    triangle((width/2), (width/2), (width/2), (width/2), (width/2), (width/2));
+    triangle((width/8), (width/8), (width/8), (width/8), (width/8), (width/8));
     
     //draw the image
     image(img, width/2, height/2);
