@@ -26,7 +26,6 @@ function preload(){
   imageList[2]=loadImage('image3.jpg');
   imageList[3]=loadImage('image4.jpg');
   imageList[4]=loadImage('image5.jpg');
-  imageList[5]=loadImage('image6.jpg');  
   stringList=["Help Me Please!", "Flee, Flee For Your Lives!", "We Are Doomed!", "Tonight, We Are Doomed!", "Save Yourselves!", "Please Help!"];
 }
 
@@ -61,7 +60,6 @@ function drawZero(){//Normal display
 	background(0);
 
     //Displays the image at center point
-    chooseNewImage();
     
     //draw the image
     image(img, width/2, height/2);
@@ -77,7 +75,6 @@ function drawOne(){//Display an ellipse
     var pictureDiameter=width/1.2;
     ellipse((width/2), (height/2), pictureDiameter, pictureDiameter);
 
-    chooseNewImage();
 
     //draw the image
     image(img, width/2, height/2);
@@ -88,7 +85,6 @@ function drawTwo(){//Display an ellipse that follows the mouse
 
     //Displays the image at center point
     //image(img, width/2, height/2, random(mouseX), random(mouseY));
-    chooseNewImage();
 
     posX=mouseX;
     posY=mouseY;
@@ -107,8 +103,6 @@ function drawTwo(){//Display an ellipse that follows the mouse
 function drawThree(){//Display text
 	background(255, 0, 0);
 
-    chooseNewImage();
-
     chooseNewItem();
     fill(255, 255, 0);
     text(displayString, 100, 100);
@@ -119,7 +113,6 @@ function drawThree(){//Display text
 
 function drawFour(){
 	background(0);
-    chooseNewImage();    
     
     //draw the image
     image(img, width/2*3, height/2*3);
@@ -127,8 +120,6 @@ function drawFour(){
 
 function drawFive(){
 	background(255, 255 , 0);
-
-    chooseNewImage();  
 
     fill(0, 128, 0);//Green
 
@@ -155,13 +146,15 @@ function chooseNewItem() {
 function mousePressed() {
   bRegular=!bRegular;
 
-  setState()
+  setState();
 }
 
 function setState(){
 	stateList=["Ellipse", "mouseFollow", "displayText", "shrinkPic", "Triangle", "normalPic"];
 
-    state=random(stateList);
+    state=random(stateList);    
+
+    chooseNewImage();
 
 	return state;
  }
