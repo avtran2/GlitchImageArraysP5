@@ -136,7 +136,7 @@ function drawFive(){
     green=color(0, 0);
     fill(green);
 
-    triangle((width/4.45), (width/5.32), (width/1.29), (width/5.32), (width/2), (width/12.5));
+    triangle((width/2), (width/2), (width/2), (width/2), (width/2), (width/2));
     
     //draw the image
     image(img, width/2, height/2);
