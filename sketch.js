@@ -2,11 +2,10 @@
     Glitch Image Arrays
     by: Alvin Tran
 
-    Use images and other shape-drawing techniques with timers using millis() to create erratic behavior.
-
+    Use images and other shape-drawing techniques to display several different states
 */
 
-var img; // Declare variable 'img'.
+var img;//Declare variable 'img'.
 var imageList=[];
 var stringList;
 
@@ -15,8 +14,8 @@ var bRegular=true;
 var posX;
 var posY;
 
-//State machines that determines emotions
-var state; //will change
+//State machines that determines display
+var state;//will change
 var stateList;
 
 // preload() will execture before setup()
@@ -66,7 +65,7 @@ function drawNormal(){//Normal display
 }
 
 function drawRedEllipse(){//Display a red ellipse behind the picture
-    background(0);
+    background(0);//Black
 
     //Displays the image at center point
 
@@ -74,7 +73,6 @@ function drawRedEllipse(){//Display a red ellipse behind the picture
 
     var pictureDiameter=width/1.2;
     ellipse((width/2), (height/2), pictureDiameter, pictureDiameter);
-
 
     //draw the image
     image(img, width/2, height/2);
@@ -90,13 +88,12 @@ function drawYellowEllipse(){//Display a yellow ellipse behind the picture
     var pictureDiameter=width/1.2;
     ellipse((width/2), (height/2), pictureDiameter, pictureDiameter);
 
-
     //draw the image
     image(img, width/2, height/2);
 }
 
 function drawGreenEllipse(){//Display a green ellipse behind the picture
-    background(0);
+    background(0);//Black
 
     //Displays the image at center point
 
@@ -104,7 +101,6 @@ function drawGreenEllipse(){//Display a green ellipse behind the picture
 
     var pictureDiameter=width/1.2;
     ellipse((width/2), (height/2), pictureDiameter, pictureDiameter);
-
 
     //draw the image
     image(img, width/2, height/2);
@@ -134,7 +130,7 @@ function drawRedFollow(){//Display a red ellipse that follows the mouse
 
     fill(255, 0, 0);//Red
 
-    ellipse(posX, posY, 100, 100);
+    ellipse(posX, posY, 100, 100);//Ellipse that follows mouse cursor
 }
 
 function drawYellowFollow(){//Display a yellow ellipse that follows the mouse
@@ -151,7 +147,7 @@ function drawYellowFollow(){//Display a yellow ellipse that follows the mouse
 
     fill(255, 255, 0);//Yellow
 
-    ellipse(posX, posY, 100, 100);    
+    ellipse(posX, posY, 100, 100);//Ellipse that follows mouse cursor    
 }
 
 function drawGreenFollow(){//Display a green ellipse that follows the mouse
@@ -168,20 +164,19 @@ function drawGreenFollow(){//Display a green ellipse that follows the mouse
 
     fill(0, 128, 0);//Green
 
-    ellipse(posX, posY, 100, 100);
+    ellipse(posX, posY, 100, 100);//Ellipse that follows mouse cursor
 }
-
 
 //chooses a new items from the array, select a random
 //index 0 to length of array-1
-function chooseNewImage(){
+function chooseNewImage(){//Selects a random image to display
     img=random(imageList);
     print(img);
 }
 
 // chooses a new items from the array, select a random
 // index 0 to length of array-1
-function chooseNewItem(){
+function chooseNewItem(){//Selects a random string to display
   displayString=random(stringList);
   print(displayString);
 }
@@ -192,7 +187,7 @@ function mousePressed(){//Checks to see if the mouse is pressed
   setState();
 }
 
-function setState(){//Sets the state from an array of strings
+function setState(){//Randomly sets the state from an array of strings
     stateList=["redEllipse", "yellowEllipse", "greenEllipse", "displayText", "mouseFollowRed", "mouseFollowYellow", "mouseFollowGreen", "normalPic"];
 
     state=random(stateList);    

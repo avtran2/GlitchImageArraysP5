@@ -2,8 +2,7 @@
 
 ### by Alvin Tran
 
-### Use images and other shape-drawing techniques with timers using millis() to create erratic behavior.
-
+### Use images and other shape-drawing techniques to display several images in different states
 ### python -m SimpleHTTPServer 8080
 ### python -m http.server 8080
 
